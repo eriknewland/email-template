@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>District Updates for {{ district_label }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Responsive adjustments */
+        @media only screen and (max-width: 600px) {
+            .two-column {
+                width: 100% !important;
+            }
+            .two-column td {
+                display: block;
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border: 1px solid #dddddd; font-family: Arial, sans-serif;">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="color: #333333;">
+                            <div style="display: flex; color: #333333;">
+                                <img src="https://i.ibb.co/wM2qfb3/Gov-Tools-1.png"/>
+                            </div>
+                            <h2 style="margin: 10px 0 5px 0; font-size: 24px; color: #333333; font-family: Arial, sans-serif;">District Updates for {{ district_label }}</h2>
+                            <p style="margin: 0; font-size: 14px; color: #666666; font-family: Arial, sans-serif;">
+                                <br>
+                                Stay informed easily with upcoming events and news just for you. 
+                                I built this tool when I was a district director and I hope it helps you too. 
+                                Just reply to this email to let me know how you'd like to customize it even more. - Evan
+                            </p>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td align="center">
+                            <table width="100%" cellpadding="0" cellspacing="0" class="two-column">
+                                <tr>
+                                    <!-- Events -->
+                                    <td valign="top" style="width: 300px; padding: 20px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; font-family: Arial, sans-serif; border: 1px solid #D3D3D3;">
+                                            <tr>
+                                                <td>
+                                                    <h2 style="font-size: 18px; color: #444444; margin: 0 0 15px;">Upcoming Events</h2>
+                                                    {{ event_1 }}
+                                                    {{ event_2 }}
+                                                    {{ event_3 }}
+                                                    {{ event_4 }}
+                                                    {{ event_5 }}
+                                                    <a href="{{ events_url }}" style="display: block; margin-top: 20px; text-align: center; background: #46a0ea; color: #ffffff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold;">View All Events</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- News -->
+                                    <td valign="top" style="width: 300px; padding: 20px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; font-family: Arial, sans-serif; border: 1px solid #D3D3D3;">
+                                            <tr>
+                                                <td>
+                                                    <h2 style="font-size: 18px; color: #444444; margin: 0 0 15px;">Recent News</h2>
+                                                    {{ news_1 }}
+                                                    {{ news_2 }}
+                                                    {{ news_3 }}
+                                                    {{ news_4 }}
+                                                    {{ news_5 }}
+                                                    <a href="{{ news_url }}" style="display: block; margin-top: 20px; text-align: center; background: #46a0ea; color: #ffffff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold;">View All News</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="font-family: Arial, sans-serif; font-size: 14px; color: #666666;">
+                            <p style="margin: 0 0 10px 0;">
+                                For inquiries, suggestions, requests, or feedback, please contact us at 
+                                <a href="mailto:evan@mygovtools.org" style="color: #46a0ea; text-decoration: none;">evan@mygovtools.org</a> or 
+                                <a href="https://www.mygovtools.org" style="color: #46a0ea; text-decoration: none;">MyGovTools.org</a>.
+                            </p>
+                            <p style="margin: 0 0 10px 0; color: #666666;">
+                                &copy; {{ current_year }} MyGovTools.org. All rights reserved.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
