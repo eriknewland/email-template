@@ -15,6 +15,27 @@
                 width: 100% !important;
             }
         }
+
+        /* Event and News Styles */
+        .event-item, .news-item {
+            margin: 0 0 10px;
+            border-left: 2px solid #D3D3D3;
+            padding-left: 10px;
+            color: black;
+        }
+        .event-item a, .news-item a {
+            text-decoration: none;
+            color: #46a0ea;
+            font-weight: bold;
+        }
+        .event-item span, .news-item span {
+            color: #666666;
+        }
+        .news-item span.publisher {
+            font-size: 12px;
+            color: #46a0ea;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f9f9f9;">
@@ -48,11 +69,32 @@
                                             <tr>
                                                 <td>
                                                     <h2 style="font-size: 18px; color: #444444; margin: 0 0 15px;">Upcoming Events</h2>
-                                                    {{ event_1 }}
-                                                    {{ event_2 }}
-                                                    {{ event_3 }}
-                                                    {{ event_4 }}
-                                                    {{ event_5 }}
+                                                    <!-- Event Slots -->
+                                                    <div class="event-item">
+                                                        {{ event_1_date }}<br>
+                                                        <a href="{{ event_1_url }}">{{ event_1_title }}</a><br>
+                                                        <span>{{ event_1_source }}</span>
+                                                    </div>
+                                                    <div class="event-item">
+                                                        {{ event_2_date }}<br>
+                                                        <a href="{{ event_2_url }}">{{ event_2_title }}</a><br>
+                                                        <span>{{ event_2_source }}</span>
+                                                    </div>
+                                                    <div class="event-item">
+                                                        {{ event_3_date }}<br>
+                                                        <a href="{{ event_3_url }}">{{ event_3_title }}</a><br>
+                                                        <span>{{ event_3_source }}</span>
+                                                    </div>
+                                                    <div class="event-item">
+                                                        {{ event_4_date }}<br>
+                                                        <a href="{{ event_4_url }}">{{ event_4_title }}</a><br>
+                                                        <span>{{ event_4_source }}</span>
+                                                    </div>
+                                                    <div class="event-item">
+                                                        {{ event_5_date }}<br>
+                                                        <a href="{{ event_5_url }}">{{ event_5_title }}</a><br>
+                                                        <span>{{ event_5_source }}</span>
+                                                    </div>
                                                     <a href="{{ events_url }}" style="display: block; margin-top: 20px; text-align: center; background: #46a0ea; color: #ffffff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold;">View All Events</a>
                                                 </td>
                                             </tr>
@@ -64,11 +106,37 @@
                                             <tr>
                                                 <td>
                                                     <h2 style="font-size: 18px; color: #444444; margin: 0 0 15px;">Recent News</h2>
-                                                    {{ news_1 }}
-                                                    {{ news_2 }}
-                                                    {{ news_3 }}
-                                                    {{ news_4 }}
-                                                    {{ news_5 }}
+                                                    <!-- News Slots -->
+                                                    <div class="news-item">
+                                                        <a href="{{ news_1_url }}">
+                                                            {{ news_1_title }}<br>
+                                                            <span class="publisher">{{ news_1_publisher }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="news-item">
+                                                        <a href="{{ news_2_url }}">
+                                                            {{ news_2_title }}<br>
+                                                            <span class="publisher">{{ news_2_publisher }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="news-item">
+                                                        <a href="{{ news_3_url }}">
+                                                            {{ news_3_title }}<br>
+                                                            <span class="publisher">{{ news_3_publisher }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="news-item">
+                                                        <a href="{{ news_4_url }}">
+                                                            {{ news_4_title }}<br>
+                                                            <span class="publisher">{{ news_4_publisher }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="news-item">
+                                                        <a href="{{ news_5_url }}">
+                                                            {{ news_5_title }}<br>
+                                                            <span class="publisher">{{ news_5_publisher }}</span>
+                                                        </a>
+                                                    </div>
                                                     <a href="{{ news_url }}" style="display: block; margin-top: 20px; text-align: center; background: #46a0ea; color: #ffffff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold;">View All News</a>
                                                 </td>
                                             </tr>
