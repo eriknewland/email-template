@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            padding: 0;
+        }
+
         /* Responsive adjustments */
         @media only screen and (max-width: 600px) {
             .two-column {
@@ -14,6 +29,22 @@
                 display: block;
                 width: 100% !important;
             }
+        }
+
+        /* Header Styles */
+        .header {
+            color: #333333;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 10px 0 5px 0;
+            font-size: 24px;
+            color: #333333;
+        }
+        .header p {
+            margin: 0;
+            font-size: 14px;
+            color: #666666;
         }
 
         /* Event and News Styles */
@@ -33,7 +64,6 @@
             font-weight: 400;
             color: black;
         }
-        
         .event-item span, .news-item span {
             color: #666666;
         }
@@ -43,130 +73,166 @@
             font-weight: bold;
             text-decoration: none;
         }
+
+        /* Content Styles */
+        .content {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            width: 600px;
+            margin: 0 auto;
+        }
+        .two-column td {
+            width: 300px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #D3D3D3;
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #444444;
+            margin: 0 0 15px;
+        }
+        .card a.button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            background: #46a0ea;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        .footer {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #666666;
+            text-align: center;
+        }
+        .footer a {
+            color: #46a0ea;
+            text-decoration: none;
+        }
+        .footer p {
+            margin: 0 0 10px 0;
+        }
     </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
-    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9;">
+<body>
+    <table class="content">
         <tr>
             <td align="center">
-                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border: 1px solid #dddddd; font-family: Arial, sans-serif;">
-                    <!-- Header -->
+                <!-- Header -->
+                <div class="header">
+                    <img src="https://i.ibb.co/wM2qfb3/Gov-Tools-1.png"/>
+                    <h2>District Updates for {{ district_label }}</h2>
+                    <p>
+                        <br>
+                        Stay informed easily with upcoming events and news just for you. 
+                        I built this tool when I was a district director and I hope it helps you too. 
+                        Just reply to this email to let me know how you'd like to customize it even more. - Evan
+                    </p>
+                </div>
+            </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+            <td align="center">
+                <table class="two-column">
                     <tr>
-                        <td align="center" style="color: #333333;">
-                            <div style="display: flex; color: #333333;">
-                                <img src="https://i.ibb.co/wM2qfb3/Gov-Tools-1.png"/>
+                        <!-- Events -->
+                        <td valign="top">
+                            <div class="card">
+                                <h2>Upcoming Events</h2>
+                                <!-- Event Slots -->
+                                <div class="event-item">
+                                    {{ event_1_date }}<br>
+                                    <a href="{{ event_1_url }}">{{ event_1_title }}</a><br>
+                                    <span>{{ event_1_source }}</span>
+                                </div>
+                                <div class="event-item">
+                                    {{ event_2_date }}<br>
+                                    <a href="{{ event_2_url }}">{{ event_2_title }}</a><br>
+                                    <span>{{ event_2_source }}</span>
+                                </div>
+                                <div class="event-item">
+                                    {{ event_3_date }}<br>
+                                    <a href="{{ event_3_url }}">{{ event_3_title }}</a><br>
+                                    <span>{{ event_3_source }}</span>
+                                </div>
+                                <div class="event-item">
+                                    {{ event_4_date }}<br>
+                                    <a href="{{ event_4_url }}">{{ event_4_title }}</a><br>
+                                    <span>{{ event_4_source }}</span>
+                                </div>
+                                <div class="event-item">
+                                    {{ event_5_date }}<br>
+                                    <a href="{{ event_5_url }}">{{ event_5_title }}</a><br>
+                                    <span>{{ event_5_source }}</span>
+                                </div>
+                                <a href="{{ events_url }}" class="button">View All Events</a>
                             </div>
-                            <h2 style="margin: 10px 0 5px 0; font-size: 24px; color: #333333; font-family: Arial, sans-serif;">District Updates for {{ district_label }}</h2>
-                            <p style="margin: 0; font-size: 14px; color: #666666; font-family: Arial, sans-serif;">
-                                <br>
-                                Stay informed easily with upcoming events and news just for you. 
-                                I built this tool when I was a district director and I hope it helps you too. 
-                                Just reply to this email to let me know how you'd like to customize it even more. - Evan
-                            </p>
                         </td>
-                    </tr>
-                    <!-- Content -->
-                    <tr>
-                        <td align="center">
-                            <table width="100%" cellpadding="0" cellspacing="0" class="two-column">
-                                <tr>
-                                    <!-- Events -->
-                                    <td valign="top" style="width: 300px; padding: 20px;">
-                                        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; font-family: Arial, sans-serif; border: 1px solid #D3D3D3;">
-                                            <tr>
-                                                <td>
-                                                    <h2 style="font-size: 18px; color: #444444; margin: 0 0 15px;">Upcoming Events</h2>
-                                                    <!-- Event Slots -->
-                                                    <div class="event-item">
-                                                        {{ event_1_date }}<br>
-                                                        <a href="{{ event_1_url }}">{{ event_1_title }}</a><br>
-                                                        <span>{{ event_1_source }}</span>
-                                                    </div>
-                                                    <div class="event-item">
-                                                        {{ event_2_date }}<br>
-                                                        <a href="{{ event_2_url }}">{{ event_2_title }}</a><br>
-                                                        <span>{{ event_2_source }}</span>
-                                                    </div>
-                                                    <div class="event-item">
-                                                        {{ event_3_date }}<br>
-                                                        <a href="{{ event_3_url }}">{{ event_3_title }}</a><br>
-                                                        <span>{{ event_3_source }}</span>
-                                                    </div>
-                                                    <div class="event-item">
-                                                        {{ event_4_date }}<br>
-                                                        <a href="{{ event_4_url }}">{{ event_4_title }}</a><br>
-                                                        <span>{{ event_4_source }}</span>
-                                                    </div>
-                                                    <div class="event-item">
-                                                        {{ event_5_date }}<br>
-                                                        <a href="{{ event_5_url }}">{{ event_5_title }}</a><br>
-                                                        <span>{{ event_5_source }}</span>
-                                                    </div>
-                                                    <a href="{{ events_url }}" style="display: block; margin-top: 20px; text-align: center; background: #46a0ea; color: #ffffff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold;">View All Events</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <!-- News -->
-                                    <td valign="top" style="width: 300px; padding: 20px;">
-                                        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; font-family: Arial, sans-serif; border: 1px solid #D3D3D3;">
-                                            <tr>
-                                                <td>
-                                                    <h2 style="font-size: 18px; color: #444444; margin: 0 0 15px;">Recent News</h2>
-                                                    <!-- News Slots -->
-                                                    <div class="news-item">
-                                                        <a href="{{ news_1_url }}">
-                                                            {{ news_1_title }}<br>
-                                                            <span class="publisher">- {{ news_1_publisher }}</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="news-item">
-                                                        <a href="{{ news_2_url }}">
-                                                            {{ news_2_title }}<br>
-                                                            <span class="publisher">- {{ news_2_publisher }}</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="news-item">
-                                                        <a href="{{ news_3_url }}">
-                                                            {{ news_3_title }}<br>
-                                                            <span class="publisher">- {{ news_3_publisher }}</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="news-item">
-                                                        <a href="{{ news_4_url }}">
-                                                            {{ news_4_title }}<br>
-                                                            <span class="publisher">- {{ news_4_publisher }}</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="news-item">
-                                                        <a href="{{ news_5_url }}">
-                                                            {{ news_5_title }}<br>
-                                                            <span class="publisher">- {{ news_5_publisher }}</span>
-                                                        </a>
-                                                    </div>
-                                                    <a href="{{ news_url }}" style="display: block; margin-top: 20px; text-align: center; background: #46a0ea; color: #ffffff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold;">View All News</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <!-- Footer -->
-                    <tr>
-                        <td align="center" style="font-family: Arial, sans-serif; font-size: 14px; color: #666666;">
-                            <p style="margin: 0 0 10px 0;">
-                                For inquiries, suggestions, requests, or feedback, please contact us at 
-                                <a href="mailto:evan@mygovtools.org" style="color: #46a0ea; text-decoration: none;">evan@mygovtools.org</a> or 
-                                <a href="https://www.mygovtools.org" style="color: #46a0ea; text-decoration: none;">MyGovTools.org</a>.
-                            </p>
-                            <p style="margin: 0 0 10px 0; color: #666666;">
-                                &copy; {{ current_year }} MyGovTools.org. All rights reserved.
-                            </p>
+                        <!-- News -->
+                        <td valign="top">
+                            <div class="card">
+                                <h2>Recent News</h2>
+                                <!-- News Slots -->
+                                <div class="news-item">
+                                    <a href="{{ news_1_url }}">
+                                        {{ news_1_title }}<br>
+                                        <span class="publisher">- {{ news_1_publisher }}</span>
+                                    </a>
+                                </div>
+                                <div class="news-item">
+                                    <a href="{{ news_2_url }}">
+                                        {{ news_2_title }}<br>
+                                        <span class="publisher">- {{ news_2_publisher }}</span>
+                                    </a>
+                                </div>
+                                <div class="news-item">
+                                    <a href="{{ news_3_url }}">
+                                        {{ news_3_title }}<br>
+                                        <span class="publisher">- {{ news_3_publisher }}</span>
+                                    </a>
+                                </div>
+                                <div class="news-item">
+                                    <a href="{{ news_4_url }}">
+                                        {{ news_4_title }}<br>
+                                        <span class="publisher">- {{ news_4_publisher }}</span>
+                                    </a>
+                                </div>
+                                <div class="news-item">
+                                    <a href="{{ news_5_url }}">
+                                        {{ news_5_title }}<br>
+                                        <span class="publisher">- {{ news_5_publisher }}</span>
+                                    </a>
+                                </div>
+                                <a href="{{ news_url }}" class="button">View All News</a>
+                            </div>
                         </td>
                     </tr>
                 </table>
+            </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+            <td align="center" class="footer">
+                <p>
+                    For inquiries, suggestions, requests, or feedback, please contact us at 
+                    <a href="mailto:evan@mygovtools.org">evan@mygovtools.org</a> or 
+                    <a href="https://www.mygovtools.org">MyGovTools.org</a>.
+                </p>
+                <p>
+                    &copy; {{ current_year }} MyGovTools.org. All rights reserved.
+                </p>
             </td>
         </tr>
     </table>
